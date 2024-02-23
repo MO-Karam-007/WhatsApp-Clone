@@ -1,0 +1,89 @@
+.Sidebar {
+    display: flex;
+    flex-direction: column;
+border-right: 1px black solid;
+    flex : 0.35;
+}
+
+.Sidebar__header{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px ;
+    align-items: center;
+    border-radius: 1px solid;
+    border-bottom: 1px black solid;
+
+}
+
+.search__box{
+    display: flex;
+    /* justify-content: center; */
+    height: 40px;    
+    
+    align-items: center;
+}
+.searchbox_Container{
+    margin: 10px 20px;
+    background-color:#6b9e98 ;
+    padding: 3px 20px;
+    width: 100%;
+    border-bottom: 1px  ;
+    border-top: 0 ;
+    border-right: 0 ;
+    border-left: 0 ;
+    border-style : solid;
+    border-color: white;
+    border-radius: 3px;
+    
+
+}
+
+
+.searchbox_Container input{
+    outline-width: 0;
+    border: none;
+    margin-left: 10px;
+    width: 80%;
+    background-color: #6b9e98 ;
+}
+.user__contact{
+    display: flex;
+    margin: 5px 10px;
+    padding: 0 10px;
+    font-size: 18px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.avatar{
+    height: 40px;
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.user__contact:hover{
+    background-color: grey;
+    border-radius: 20px;
+}
+.contact__data{
+    width: 90%;
+    padding:  7px 10px 0 10px;
+
+    margin: 0;
+
+}
+.contact__data .msg{
+    font-size: 15px;
+    
+}
+
+.contact__header{
+    font-weight: 800;
+    display: flex;
+    justify-content: space-between;
+    height: 25px;
+    flex-wrap: wrap;
+}
+

@@ -1,0 +1,131 @@
+.chat {
+    display: flex;
+    flex-direction: column;
+    flex : 0.65;
+}
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+
+    height: 100vh;
+
+}
+.chat__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #25D366;
+    padding: 0 20px;
+    border-bottom: 1px black solid;
+
+}
+
+.user__data{
+    display: flex;
+    align-items: center;
+}
+.avater{
+    margin: 0 20px 0 0;
+}
+
+.chat__info h2{
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+.chat__info p{
+    font-size: 15px;
+    color: gray;
+}
+
+.Sidebar__headerRights{
+    justify-content: space-between;
+    align-items: center;
+}
+
+.recived__msg {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 10px;
+    background-color: #dcf8c680;
+    padding: 5px;
+    border-radius: 20px 20px 20px 0;
+
+}
+.recived__msg__component{
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+.sended__msg__component{
+    display: flex;
+    justify-content: end;
+    padding: 10px ;
+
+}
+.sended__msg{
+    width: fit-content;
+    background-color: #ECE5DD;
+    padding: 5px;
+    display: flex;
+    border-radius: 20px 20px 0 20px  ;
+    margin-left: 10px;
+    flex-direction: column;
+    align-items: start;
+
+}
+
+
+.name__of__chat{
+    font-weight: 700;
+}
+
+.chat__time{
+    /* background-color: blue; */
+    margin: 2px;
+    color: grey;
+    font-weight: 500;
+
+}
+
+.sending__component{
+    border-top: 1px black solid;
+
+    align-items: flex-end;
+    bottom: 0;
+    background-color: #25D366;
+    padding: 10px 5px;
+    width: 100%;
+}
+.sending__component form{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+}
+.sending__component input{
+    width: 70%;
+    background-color:#25D366 ;
+    border: 0;
+
+}
+.sending__component input:focus{
+    width: 70%;
+    background-color:#25D366 ;
+    border: none ;
+
+
+}
+form *{
+    margin: 0 5px;
+}
+
+button{
+    background-color: #25D366;
+    display: flex;
+    align-items: center;
+    border: none;
+
+}
+
