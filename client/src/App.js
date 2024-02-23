@@ -1,10 +1,20 @@
 import Chat from "./components/Chat";
 import Sidebar from "./components/Sidebar";
 import "./App.css"
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import Pusher from 'pusher-js'
+import axios from './url/axios'
 
 function App()
 {
+  const [msgs, setMsgs] = useState([])
+  useEffect(() =>
+  {
+    axios.get('/v1/msg').then(res =>
+    {
+      setMsgs(res.data)
+    })
+  }, [])
   useEffect(() =>
   {
     // Once
@@ -14,18 +24,25 @@ function App()
       cluster: 'eu'
     });
 
-    var channel = pusher.subscribe('my-channel');
-    channel.bind('my-event', function (data)
+    var channel = pusher.subscribe('messages');
+    channel.bind('inserted', function (data)
     {
-      alert(JSON.stringify(data));
+      setMsgs([...msgs, data])
     });
 
-  }, [])
+    return () =>
+    {
+      channel.unbind_all()
+      channel.unsubscribe()
+    }
+  }, [msgs])
+
+  console.log(`Messages : `, msgs);
   return (
     <div className="App">
       <div className="back___body">
         <Sidebar />
-        <Chat />
+        <Chat msg={msgs} />
       </div>
     </div>
   );

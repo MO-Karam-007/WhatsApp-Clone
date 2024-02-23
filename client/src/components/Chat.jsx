@@ -7,12 +7,13 @@ import { MdEmojiEmotions } from "react-icons/md";
 import { IoMdSend } from "react-icons/io";
 
 import { FaVideo } from "react-icons/fa6";
-import { IoFilterSharp } from "react-icons/io5";
 import { IoIosAttach } from "react-icons/io";
 
 import { IconButton } from '@mui/material';
-const Chat = () =>
+const Chat = ({ msg }) =>
 {
+
+    console.log(`Messges`, msg);
     return (
         <>
             <div className='chat'>
@@ -48,15 +49,23 @@ const Chat = () =>
                     <div className='chat__body'>
 
 
-                        <div className='recived__msg__component'>
-                            <Avatar />
-                            <p className='recived__msg'>
+                        {msg.length ? msg.map(msg =>
+                        {
+                            return <>
+                                <div className='recived__msg__component'>
 
-                                <span className='name__of__chat'>Sister</span>
-                                This is my message
-                                <span className='chat__time'>{new Date().toLocaleTimeString()}</span>
-                            </p>
-                        </div>
+                                    <Avatar />
+                                    <p className='recived__msg'>
+
+                                        <span className='name__of__chat'>Sister</span>
+                                        This is my message
+                                        <span className='chat__time'>{new Date().toLocaleTimeString()}</span>
+                                    </p>
+                                </div>
+
+                            </>
+                        }) : <h1>no msgs</h1>}
+
 
 
                         <div className='sended__msg__component'>
