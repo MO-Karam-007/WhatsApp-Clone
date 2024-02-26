@@ -1,5 +1,6 @@
-
 # WhatsApp Clone
+
+![Home screen](whats.png)
 
 This is a WhatsApp clone built using MERN (MongoDB, Express.js, React, Node.js) technologies with Firebase for authentication (Auth) and OAuth.
 

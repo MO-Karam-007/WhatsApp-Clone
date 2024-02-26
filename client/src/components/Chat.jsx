@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./Chat.css"
 import Avatar from '@mui/material/Avatar';
 import { FaPhoneFlip } from "react-icons/fa6";
@@ -10,10 +10,25 @@ import { FaVideo } from "react-icons/fa6";
 import { IoIosAttach } from "react-icons/io";
 
 import { IconButton } from '@mui/material';
+import axios from '../url/axios.js'
 const Chat = ({ msg }) =>
 {
+    const [input, setInput] = useState('')
+    const onClickTest = async (e) =>
+    {
+        e.preventDefault()
+        await axios.post('/v1/msg', {
+            message: input,
+            time: "19:00",
+            recived: !msg.recived,
+            user: "Demo App"
+        })
 
-    console.log(`Messges`, msg);
+        setInput("")
+
+    }
+
+
     return (
         <>
             <div className='chat'>
@@ -26,7 +41,7 @@ const Chat = ({ msg }) =>
                                 <Avatar />
                             </div>
                             <div className='chat__info'>
-                                <h2>Name of user</h2>
+                                <h2>Mo Karam</h2>
                                 <p>2 hours ago</p>
                             </div>
                         </div>
@@ -52,47 +67,16 @@ const Chat = ({ msg }) =>
                         {msg.length ? msg.map(msg =>
                         {
                             return <>
-                                <div className='recived__msg__component'>
-
-                                    <Avatar />
-                                    <p className='recived__msg'>
-
-                                        <span className='name__of__chat'>Sister</span>
-                                        This is my message
-                                        <span className='chat__time'>{new Date().toLocaleTimeString()}</span>
+                                <div className={`sended__msg__component ${msg.recived && `recived__msg__component`}`}>
+                                    <p className={`recived__msg ${msg.recived && `sended_msg`}`}>
+                                        <span className='name__of__chat'>{msg.user}</span>
+                                        {msg.message}
+                                        <span className='chat__time'>{msg.time}</span>
                                     </p>
                                 </div>
 
                             </>
                         }) : <h1>no msgs</h1>}
-
-
-
-                        <div className='sended__msg__component'>
-                            <p className='sended__msg'>
-                                <span className='name__of__chat'>Sister</span>
-                                This is my message
-                                <span className='chat__time'>{new Date().toLocaleTimeString()}</span>
-                            </p>
-                        </div>
-
-                        <div className='sended__msg__component'>
-                            <p className='sended__msg'>
-                                <span className='name__of__chat'>Sister</span>
-                                This is my message
-                                <span className='chat__time'>{new Date().toLocaleTimeString()}</span>
-                            </p>
-                        </div>
-
-                        <div className='recived__msg__component'>
-                            <Avatar />
-                            <p className='recived__msg'>
-
-                                <span className='name__of__chat'>Sister</span>
-                                This is my message
-                                <span className='chat__time'>{new Date().toLocaleTimeString()}</span>
-                            </p>
-                        </div>
 
                     </div>
                 </div>
@@ -103,10 +87,10 @@ const Chat = ({ msg }) =>
                             <MdEmojiEmotions />
                             <IoIosAttach />
                         </div>
-                        <input placeholder='Type a message' />
-                        <button>
+                        <input onChange={(e) => setInput(e.target.value)} value={input} placeholder='Type a message' type="text" />
+                        <button type="submit" onClick={onClickTest}>
                             <IoMdSend />
-                        </button>
+                        </button >
                     </form>
                 </div>
 

@@ -10,9 +10,11 @@ function App()
   const [msgs, setMsgs] = useState([])
   useEffect(() =>
   {
+    console.log(`I am running `);
     axios.get('/v1/msg').then(res =>
     {
-      setMsgs(res.data)
+      console.log(`Res`, res.data.data);
+      setMsgs(res.data.data)
     })
   }, [])
   useEffect(() =>
@@ -25,9 +27,11 @@ function App()
     });
 
     var channel = pusher.subscribe('messages');
-    channel.bind('inserted', function (data)
+    channel.bind('inserted', (data) =>
     {
+      // alert(JSON.stringify(data))
       setMsgs([...msgs, data])
+      // console.log('MSG', msgs)
     });
 
     return () =>
@@ -37,7 +41,7 @@ function App()
     }
   }, [msgs])
 
-  console.log(`Messages : `, msgs);
+  // console.log(`Messages : `, msgs.data);
   return (
     <div className="App">
       <div className="back___body">

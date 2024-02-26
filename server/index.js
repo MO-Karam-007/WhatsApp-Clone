@@ -14,17 +14,20 @@ const app = express()
 // MIDDLEWARES 
 app.use(express.json())
 app.use(cors())
+
 // DATABASE CONNECT
 dbConnection()
 
 // SETUP REAL-TIME PUSHER
 const pusher = new Pusher({
-    appId: "1438499",
-    key: "690b6bfe90679fefc55a",
-    secret: "22a0ea26eba97f05d67d",
+    appId: process.env.PUSER_ID,
+    key: process.env.PUSER_KEY,
+    secret: process.env.PUSER_SECRET,
     cluster: "eu",
     useTLS: true
 });
+
+console.log("WHats app")
 
 // ADD EVENT LISTENER
 const db = mongoose.connection

@@ -3,6 +3,11 @@
     flex-direction: column;
     flex : 0.65;
 }
+.chat__body{
+    overflow: scroll;
+    height: 70vh;
+    overflow-x: hidden; 
+}
 .wrapper{
     display: flex;
     flex-direction: column;
@@ -44,6 +49,18 @@
     align-items: center;
 }
 
+
+
+.sended__msg__component{
+    display: flex;
+    justify-content: start;
+}
+
+.recived__msg__component{
+    display: flex;
+    justify-content: end;
+}
+
 .recived__msg {
     display: flex;
     flex-direction: column;
@@ -51,30 +68,18 @@
     background-color: #dcf8c680;
     padding: 5px;
     border-radius: 20px 20px 20px 0;
-
-}
-.recived__msg__component{
-    display: flex;
-    align-items: center;
-    padding: 0 10px;
-}
-.sended__msg__component{
-    display: flex;
-    justify-content: end;
-    padding: 10px ;
-
-}
-.sended__msg{
     width: fit-content;
-    background-color: #ECE5DD;
-    padding: 5px;
-    display: flex;
-    border-radius: 20px 20px 0 20px  ;
-    margin-left: 10px;
-    flex-direction: column;
-    align-items: start;
+}
+
+.sended_msg{
+    border-radius: 20px  20px 0 20px ;
+
 
 }
+
+
+
+
 
 
 .name__of__chat{

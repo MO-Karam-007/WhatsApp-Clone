@@ -48,13 +48,29 @@ border-right: 1px black solid;
 }
 .user__contact{
     display: flex;
+    flex-direction: column;
     margin: 5px 10px;
     padding: 0 10px;
     font-size: 18px;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center; */
+    /* justify-content: center; */
 }
 
+.continer__user{
+    margin: 10px 0;
+    /* background-color: blue; */
+    display: flex;
+    align-items: center;
+}
+
+
+.continer__user:hover{
+    margin: 10px 0;
+    background-color: grey;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+}
 
 .avatar{
     height: 40px;
@@ -63,19 +79,16 @@ border-right: 1px black solid;
     align-items: center;
     justify-content: center;
 }
-.user__contact:hover{
-    background-color: grey;
-    border-radius: 20px;
-}
+
 .contact__data{
     width: 90%;
     padding:  7px 10px 0 10px;
-
     margin: 0;
 
 }
 .contact__data .msg{
     font-size: 15px;
+    font-weight: 500;
     
 }
 
