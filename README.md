@@ -17,8 +17,8 @@ This is a WhatsApp clone built using MERN (MongoDB, Express.js, React, Node.js) 
 - **Frontend**: React.js, Firebase Authentication
 - **Backend**: Node.js, Express.js, MongoDB (using Mongoose)
 - **Authentication**: Firebase Authentication (for email/password authentication and OAuth)
-- **Real-time Messaging**: Socket.io (for real-time communication)
-- **Styling**: CSS (or use a CSS framework like Bootstrap or Material-UI)
+- **Real-time Messaging**: Pusher (for real-time communication)
+- **Styling**: CSS
 
 ## Installation
 
